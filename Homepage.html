@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zuro Automotive</title>
+    <link rel="stylesheet" href="Homepage.css" />
+    <script src="https://kit.fontawesome.com/88f05daeb4.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body style="background-color: aqua;">
+    <div class="banner">
+      <div class="navbar">
+        <img src="Zuro.jpg" class="logo" />
+        <ul style="list-style: none;">
+          <li><a href="FAQPage.html">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="content">
+        <h1>ZURO AUTOMOTIVE</h1>
+        <p></p>
+        <button onclick="setIntentAndRedirect('buy')" class="zuro-button">Buy car</button>
+        <button onclick="setIntentAndRedirect('sell')" class="zuro-button">Sell car</button>
+      </div>
+    </div> 
+
+    <!---The why page--->
+    <div class="below-banner">
+      <h2 style="font-size: 50px; text-align: center;">Why Zuro?</h2>
+      <br>
+
+<main>
+  <aside class="aside"> 
+    <h2>Saved Time</h2>
+    <p>Skip the lot. Find your next car in minutes—not hours</p>
+  </aside>
+
+  <section class="section"> 
+    <h2>Easy-to-Use AI</h2>
+    <p>Smart search that learns what you want. No stress, no guesswork</p>
+  </section>
+
+  <article class="article"> 
+    <h3>Personalized Advice</h3>
+    <p>Get expert-backed picks tailored to your needs and budget</p>
+  </article>
+</main>
+
+
+    </div>
+
+    <div class = "social-links">
+      <h3 style="font-size: 50px;">Follow us on Social Media</h3>
+      <br>
+
+      <a style="color: black;" href="https://www.instagram.com/zuroautomotive/" target="_blank">
+        <i class="fa-brands fa-instagram fa-3x"></i>
+      </a>
+
+      <a style="color:black;" href="https://www.youtube.com/@Zuro_Offical" target="_blank">
+        <i class="fa-brands fa-youtube fa-3x"></i>
+      </a>
+
+      <a style="color:black;" href="https://www.tiktok.com/@zuro.automotive" target="_blank">
+        <i class="fa-brands fa-tiktok fa-3x"></i>
+      </a>
+
+      <br>
+      <br>
+            <p style="text-align: center;"> <a href = https://www.youtube.com/watch?v=dQw4w9WgXcQ>  Privacy Policy</a>  |  Copyright 2025 Zuro</p>
+    </div>
+
+    
+    <script>
+      function setIntentAndRedirect(action) {
+        localStorage.setItem("intent", action);
+        window.location.href = "LogIn.html";
+      }
+    </script>
+  </body>
+</html>
