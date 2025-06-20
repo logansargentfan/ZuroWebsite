@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zuro Automotive</title>
+  <link rel="stylesheet" href="Homepage.css" />
+  <script src="https://kit.fontawesome.com/88f05daeb4.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="ZuroIcon.png" type="image/png" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
 
+<body style="background-color: #01a6ff;">
+
+  <!-- Intro Banner -->
+  <div class="banner">
+    <div class="navbar">
+      <img src="ZuroLogo.png" class="logo" />
+      <ul style="list-style: none;">
+        <li><a href="FAQPage.html">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h1>ZURO AUTOMOTIVE</h1>
+      <p class="belowLogo">Used Car Buying, Elevated by AI</p>
+      <button onclick="setIntentAndRedirect('buy')" class="zuro-button" style="font-family: 'Horizon Font', sans-serif;">Buy Car</button>
+      <button onclick="setIntentAndRedirect('sell')" class="zuro-button" style="font-family: 'Horizon Font', sans-serif;">Sell Car</button>
+    </div>
+  </div> 
+
+  <!-- Why Zuro -->
+  <div class="below-banner">
+    <h2 style="font-size: 50px; text-align: center; margin-bottom: 30px; font-family: 'Horizon Font', sans-serif;">Why Zuro?</h2>
+
+    <main>
+      <aside class="aside"> 
+        <i class="fa-solid fa-clock fa-3x"></i>
+        <h3 style="font-size: 30px; font-family: 'Horizon Font', sans-serif;">Saved Time</h3>
+        <p>Skip the lot. Find your next car in minutes—not hours.</p>
+      </aside>
+
+      <section class="section"> 
+        <i class="fa-solid fa-robot fa-3x"></i>
+        <h4 style="font-size:30px; font-family: 'Horizon Font', sans-serif;">Easy-to-Use AI</h4>
+        <p>Smart search that learns what you want. No stress, no guesswork.</p>
+      </section>
+
+      <article class="article"> 
+        <i class="fa-solid fa-bullseye fa-3x"></i>
+        <h5 style="font-size:30px; font-family: 'Horizon Font', sans-serif;">Custom Picks</h5>
+        <p>Get expert-backed picks tailored to your needs and budget.</p>
+      </article>
+    </main>
+  </div>
+
+  <!-- Reviews -->
+  <div class="reviews">
+    <h2 style="font-size: 50px; text-align: center; font-family: 'Horizon Font', sans-serif;">What our customers say</h2>
+
+    <br><br>
+
+    <p style="font-size: 20px;">"Had a great time selling my Camry on here" - Lena Torres</p>
+    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+
+    <br><br>
+
+    <p style="font-size: 20px;">"Buying my Cayman was super easy thanks to Zuro" - Marcus Reed</p>
+    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+
+    <br><br>
+
+    <p style="font-size: 20px;">"Probably had one of the best experiences I've ever had selling a car privately" - Tyler Morgan</p>
+    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="far fa-star"></i>
+  </div>
+
+  <!-- Social Links -->
+  <div class="social-links">
+    <h3 style="font-size: 20px; font-family: 'Horizon Font', sans-serif;">Follow us</h3>
+    <br>
+
+    <a class="social-icon" href="https://www.instagram.com/zuroautomotive/" target="_blank">
+      <i class="fa-brands fa-instagram fa-2x"></i>
+    </a>
+
+    <a class="social-icon" href="https://www.youtube.com/@Zuro_Offical" target="_blank">
+      <i class="fa-brands fa-youtube fa-2x"></i>
+    </a>
+
+    <a class="social-icon" href="https://www.tiktok.com/@zuroautomotiveofficial" target="_blank">
+      <i class="fa-brands fa-tiktok fa-2x"></i>
+    </a>
+
+    <br><br>
+
+    <p style="text-align: center;">
+      <a href="Privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a> |
+      <a href="Service.html" style="color: inherit; text-decoration: none;">Terms of Service</a> |
+      © Copyright 2025 Zuro
+    </p>
+  </div>
+
+  <!-- Redirect Logic -->
+  <script>
+    function setIntentAndRedirect(action) {
+      localStorage.setItem("intent", action);
+      window.location.href = "LogIn.html";
+    }
+  </script>
+
+</body>
+</html>
