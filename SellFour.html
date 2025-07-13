@@ -1,0 +1,120 @@
+ <!DOCTYPE html>
+ <html>
+<head>
+  <title>Sell Car</title>
+  <link rel="stylesheet" href="Sell.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="ZuroIcon.png" type="image/png" />
+</head>
+
+    <body style = "background-color: #01a6ff;">
+
+<div class="normal-bar" style="background-color: black; width: 100%;">
+  <div class="logo">
+    <a href="Homepage.html" class="styledImage">
+      <img class="logowoah" src="Screenshot 2025-06-15 153738.png" alt="">
+    </a>
+  </div>
+</div>
+        <img src="image4.png" alt="four" class="styledImage"/>
+
+    <h1>Enter Your Details Here</h1> 
+
+        <br>
+
+<form action="Redirect.html" method="GET"; action="your-upload-handler" method="POST" enctype="multipart/form-data">
+    <!--This one needs dropdown-->
+
+ <!-- Dropdown -->
+<div>
+  <label for="modifications"><strong style="color: #00BFFF;">Modifications:</strong></label><br>
+  <select id="modifications" name="modifications" required onchange="toggleModsInput()">
+    <option value="">-- Select --</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+</div>
+
+<!-- Dynamic mod inputs -->
+<div id="mod-section" style="margin-top: 10px; display: none;">
+  <div id="mod-fields"></div>
+  <button type="button" id="add-mod-button" onclick="addModInput()">Add Mod</button>
+</div>
+
+
+<script>
+  function toggleModsInput() {
+    const selection = document.getElementById('modifications').value;
+    const modSection = document.getElementById('mod-section');
+    const modFields = document.getElementById('mod-fields');
+    const modDetailsDiv = document.getElementById('modDetailsDiv');
+    const modDetailsTextarea = document.getElementById('modDetails');
+
+    // Reset mod fields
+    modFields.innerHTML = '';
+
+    if (selection === 'yes') {
+      modSection.style.display = 'block';
+      modDetailsDiv.style.display = 'block';
+      modDetailsTextarea.setAttribute("required", "required");
+      addModInput(); // add first input
+    } else {
+      modSection.style.display = 'none';
+      modDetailsDiv.style.display = 'none';
+      modDetailsTextarea.removeAttribute("required");
+      modDetailsTextarea.value = '';
+    }
+  }
+
+  function addModInput() {
+    const modFields = document.getElementById('mod-fields');
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.name = 'mods[]';
+    input.placeholder = 'Enter a mod';
+    input.style.display = 'block';
+    input.style.margin = '5px 0';
+    modFields.appendChild(input);
+  }
+</script>
+   
+
+
+<div id="ownerNote">
+  <label for="ownerNoteTextarea; font-style:'Inter, sans-serif'">Owner's Note:</label><br>
+  <textarea
+    id="ownerNoteTextarea"
+    name="ownerNote"
+    rows="4"
+    cols="50"
+    placeholder="Enter owner's note here"
+    required
+    style="font-size: 16px; padding: 8px; font-style: 'Inter, sans-serif';"
+  ></textarea>
+</div>
+
+  <div>
+  <label for="photos">Upload Photos:</label>
+  <input
+    type="file"
+    id="photos"
+    name="photos[]"
+    accept="image/*"
+    multiple
+    required
+  >
+</div>
+
+  <div>
+    <label for="price">Price: $</label>
+    <input type="number" id="number" name="number">
+  </div>
+
+<button type="submit" class="zuro-button" style="background-color: #01a6ff;">Next</button>
+
+
+</form>
+
+</body>
+
+ </html>

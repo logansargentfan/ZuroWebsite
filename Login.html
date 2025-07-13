@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Zuro</title>
+  <link rel="stylesheet" href="LoginStyle.css" />
+  <script src="https://kit.fontawesome.com/88f05daeb4.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="ZuroIcon.png" type="image/png" />
+</head>
+<body>
+  <form onsubmit="handleLogin(event)">
+    
+<div class="normal-bar" style="background-color: black; width: 100%;">
+  <div class="logo">
+    <a href="Homepage.html" class="logo-link">
+      <img class="logowoah" src="Screenshot 2025-06-15 153738.png" alt="">
+    </a>
+  </div>
+</div>
+
+    <h1 style="color: #01a6ff; text-align: center;" class = "headerr">LOGIN</h1>
+    
+    <div>
+      <label for="email" style="color:#01a6ff;">
+        <i class="fa-solid fa-envelope fa-1x"></i>
+      </label>
+      <input type="email" id="email" name="email" placeholder="Email" required />
+    </div>
+
+    <div>
+      <label for="password" style="color:#01a6ff;">
+        <i class="fa-solid fa-lock fa-1x" style="color: #01a6ff;"></i>  
+      </label>
+      <input type="password" id="password" name="password" placeholder="Password" required />
+    </div>
+
+    <button type="submit">Sign-In</button>
+    <button type="button" onclick="alert('Password reset not implemented.')">Forgot Password?</button>
+
+    <div class="alt-options" style="text-align: center; color: white;">
+      <p>Don't have an account?</p>
+      <button type="button" onclick="window.location.href='SignUp.html'">Sign Up</button>
+    </div>
+
+  <p class="legal-text" style="color: #01a6ff; text-align: center;">
+    By signing in, you agree to our <a href="Service.html" style="text-decoration: none;">Terms of Service</a> and <a href="Privacy.html" style="text-decoration: none;">Privacy Policy</a>
+  </p>
+
+  </form>
+
+
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const intent = localStorage.getItem("intent");
+
+      if (intent === "buy") {
+        window.location.href = "CarBuy.html";
+      } else if (intent === "sell") {
+        window.location.href = "SellOne.html";
+      } else {
+        alert("Please select Buy or Sell before logging in.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+ <!DOCTYPE html>
+ <html>
+<head>
+  <title>Sell Car</title>
+  <link rel="stylesheet" href="Sell.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="ZuroIcon.png" type="image/png" />
+
+</head>
+
+    <body style = "background-color: #01a6ff;">
+
+<div class="normal-bar" style="background-color: black; width: 100%;">
+  <div class="logo">
+    <a href="Homepage.html" class="styledImage">
+      <img class="logowoah" src="Screenshot 2025-06-15 153738.png" alt="">
+    </a>
+  </div>
+</div>
+
+    <img src="image2.png" alt="two" class="styledImage"/>
+
+    <h1>Enter Your Details Here</h1> 
+  
+<form action="SellThree.html" method="GET">
+
+<!-- Fuel Type Selector -->
+<label for="fuel-type">Fuel Type:</label>
+<select id="fuel-type" name="fuel-type" onchange="handleFuelTypeChange()">
+  <option value="">Select</option>
+  <option value="gasoline">Gasoline</option>
+  <option value="electric">Electric</option>
+  <option value="hydrogen">Hydrogen Fuel Cell</option>
+</select>
+
+<br>
+
+<!-- Displacement (only for gasoline) -->
+<div id="displacement-div">
+  <label for="displacement">Displacement (Liters):</label><br>
+  <input type="number" id="displacement" name="displacement" step="0.1">
+</div>
+
+<br>
+
+<!-- Aspiration (only for gasoline) -->
+<div id="aspiration-div">
+  <label for="aspiration">Engine Aspiration:</label>
+  <select id="aspiration" name="aspiration">
+    <option value="">Select</option>
+    <option value="na">Naturally Aspirated</option>
+    <option value="turbo">Turbocharged</option>
+    <option value="twin-turbo">Twin-Turbocharged</option>
+    <option value="supercharged">Supercharged</option>
+    <option value="twincharged">Twincharged</option>
+  </select>
+</div>
+
+<br>
+
+<!-- Engine Type (filtered by fuel type) -->
+<label for="engine-type">Engine Type:</label>
+<select id="engine-type" name="engine-type">
+  <!-- Options are populated by JavaScript -->
+</select>
+
+<script>
+const engineTypeSelect = document.getElementById("engine-type");
+
+// Define engine types by fuel category
+const engineOptions = {
+  gasoline: [
+    { value: "i3", label: "Inline 3 (I3)" },
+    { value: "i4", label: "Inline 4 (I4)" },
+    { value: "i6", label: "Inline 6 (I6)" },
+    { value: "v6", label: "V6" },
+    { value: "v8", label: "V8" },
+    { value: "v10", label: "V10" },
+    { value: "v12", label: "V12" },
+    { value: "rotary", label: "Rotary" },
+    { value: "flat4", label: "Flat-4" },
+    { value: "flat6", label: "Flat-6" },
+    { value: "vr6", label: "VR6" }
+  ],
+  electric: [
+    { value: "ev1", label: "(Electric) Single Motor" },
+    { value: "ev2", label: "(Electric) Dual Motor" }
+  ],
+  hydrogen: [
+    { value: "fcev", label: "Hydrogen Fuel Cell" }
+  ]
+};
+
+function handleFuelTypeChange() {
+  const fuelType = document.getElementById("fuel-type").value;
+  const displacementDiv = document.getElementById("displacement-div");
+  const aspirationDiv = document.getElementById("aspiration-div");
+
+  // Show/hide displacement & aspiration
+  if (fuelType === "gasoline") {
+    displacementDiv.style.display = "block";
+    aspirationDiv.style.display = "block";
+  } else {
+    displacementDiv.style.display = "none";
+    aspirationDiv.style.display = "none";
+    document.getElementById("displacement").value = "";
+    document.getElementById("aspiration").selectedIndex = 0;
+  }
+
+  // Populate engine type options
+  populateEngineTypes(fuelType);
+}
+
+function populateEngineTypes(fuelType) {
+  engineTypeSelect.innerHTML = ""; // Clear current options
+  const defaultOption = document.createElement("option");
+  defaultOption.text = "Select";
+  defaultOption.value = "";
+  engineTypeSelect.appendChild(defaultOption);
+
+  const options = engineOptions[fuelType] || [];
+  options.forEach(opt => {
+    const option = document.createElement("option");
+    option.value = opt.value;
+    option.text = opt.label;
+    engineTypeSelect.appendChild(option);
+  });
+}
+
+// Optional: initialize engine types if there's a preselected fuel type
+handleFuelTypeChange();
+</script>
+
+<br>
+
+   <div>
+    <label for="engine">Horsepower:</label>
+    <input type="number" id="Horsepower" name="Horsepower" required>
+  </div>
+  
+<br>
+
+    <!--This one needs dropdown-->
+  <div>
+<label for="transmission-type">Transmission Type:</label>
+<select id="transmission-type" name="transmission-type">
+  <option value="Automatic">Automatic</option>
+  <option value="Manual">Manual</option>
+</select>
+  </div>
+
+<br>
+
+
+<div>
+<label for="transmission-speeds">Number of Speeds:</label>
+<input type="number" id="transmission-speeds" name="transmission-speeds" min="1" placeholder="e.g. 6">
+</div>  
+
+<br>
+
+  <!--This one needs dropdown-->
+<div>
+  <label for="drivetrain">Drivetrain:</label>
+  <select id="drivetrain" name="drivetrain" class="driveDrop" required>
+    <option value="">-- Select --</option>
+    <option value="RWD">RWD</option>
+    <option value="AWD">AWD/4WD</option>
+    <option value="FWD">FWD</option>
+  </select>
+</div>
+
+  <br>
+  <button type="submit" class="zuro-button" style=" background-color: #01a6ff;">Next</button>
+
+</form>
+
+
+    </body>
+ </html>

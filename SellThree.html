@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+ <html>
+<head>
+  <title>Sell Car</title>
+  <link rel="stylesheet" href="Sell.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="ZuroIcon.png" type="image/png" />
+
+
+</head>
+
+    <body style = "background-color: #01a6ff;">
+
+  <div class="normal-bar" style="background-color: black; width: 100%;">
+  <div class="logo">
+    <a href="Homepage.html" class="styledImage">
+      <img class="logowoah" src="Screenshot 2025-06-15 153738.png" alt="">
+    </a>
+  </div>
+</div>
+
+  <img src="image3.png" alt="three" class="styledImage" />
+    <h1>Enter Your Details Here</h1> 
+
+
+<form action="SellFour.html" method="GET">
+  <div>
+    <label for="exteriorColor">Exterior Color:</label>
+    <input type="text" id="exteriorColor" name="Mileage" required>
+  </div>
+
+  <br>
+
+  <div>
+    <label for="interiorColor">Interior Color:</label>
+    <input type="text" id="interiorColor" name="interiorColor" required>
+  </div>
+
+    <br>
+
+    <!--This one needs dropdown-->
+<div>
+  <label for="knownDamage">Known Damage:</label>
+  <br>
+  <select id="knownDamage" name="knownDamage" required onchange="toggleDamageInput()">
+    <option value="">-- Select --</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+</div>
+
+
+<div id="damageDetailsDiv" style="display: none; margin-top: 10px; height: 50px;">
+  <label for="damageDetails">Describe the damage:</label>
+  <br>
+  <textarea
+    id="damageDetails"
+    name="damageDetails"
+    rows="4"
+    cols="30"
+    placeholder="write here"
+  ></textarea></div>
+
+<script>
+  function toggleDamageInput() 
+  {
+    const dropdown = document.getElementById("knownDamage");
+    const inputDiv = document.getElementById("damageDetailsDiv");
+
+    if (dropdown.value === "yes") {
+      inputDiv.style.display = "block";
+      document.getElementById("damageDetails").setAttribute("required", "required");
+    } else {
+      inputDiv.style.display = "none";
+      document.getElementById("damageDetails").removeAttribute("required");
+    }
+  }
+</script>
+
+
+  <br>
+
+  <!--This one needs dropdown-->
+  <div>
+    <label for="titleStatus">Title Status:</label><br>
+    <select id="titleStatus" name="titleStatus" class="titleStatusDrop" required>
+    <option value="">-- Select --</option>
+    <option value="Clean">Clean</option>
+    <option value="Salvage">Salvage</option>
+    <option value="Rebuilt">Rebuilt</option>  
+    <option value="Lien Title">Lien Title</option>
+      </select>
+  
+  </div>
+
+  <br>
+  <button type="submit" class="zuro-button" style="background-color: #01a6ff;">Next</button>
+
+</form>
+
+
+    </body>
+ </html>
