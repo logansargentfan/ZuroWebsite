@@ -1,0 +1,1 @@
+This is my passion project, Zuro or you can call it ZuroAutomotive idk. It's a carbuying website thats using the power of AI to make the proccess of buying a car go quicker without being so stresful, overall giving an enjoyable experience.
