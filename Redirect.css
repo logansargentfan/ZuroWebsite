@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'Horizon Font';
+  src: url(horizon.otf);
+}
+
+
+.cool
+{
+  width:100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); 
+  text-align: center;
+  color:black;
+  font-family: 'Inter', sans-serif;
+
+}
+
+.yes {
+        font-size: 25px;
+        font-family: 'Inter', sans-serif;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: black;
+        border: 1px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #01a6ff;
+  font-family: 'Horizon Font';
+
+      }
+
+.normal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center everything by default */
+  background-color: black;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Logo centered */
+.logo {
+  flex-shrink: 0;  /* prevent shrinking */
+}
+
+.logoDetail {
+  height: 40px; /* adjust as needed */
+}
+
+/* To prevent content from hiding under fixed header */
+body {
+  padding-top: 60px;
+  margin: 0;
+}
