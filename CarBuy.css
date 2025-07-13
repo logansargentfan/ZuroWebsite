@@ -1,0 +1,548 @@
+@font-face {
+  font-family: 'Horizon Font';
+  src: url(horizon.otf);
+}
+
+/* Overall layout */
+.page-layout {
+  display: flex;
+  flex-direction: row;
+  flex: 3;
+  gap: 20px;
+  padding: 20px;
+  background-color: #01a6ff;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-right: 168px;
+}
+
+.cool
+{
+  width:100px;
+  height:35px;
+  display: block;
+  margin: auto;
+
+}
+
+.price-tag{
+  background-color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+/* Car grid area: 3 columns */
+.car-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* changed from center */
+  gap: 5px;
+  max-width: 820px; /* this is 3×(250px box + 20px gap) */
+}
+
+
+/* Optional: Adjust car-item if needed */
+.car-item {
+  width: 250px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+
+/* Chatbot box on the right */
+.main-content-wrapper {
+  display: flex;
+  gap: 30px;
+  padding: 10px;
+}
+
+.chatbot-container {
+  flex: 1; /* chatbot takes less space on the right */
+  background-color: black;
+  padding: 10px;
+  min-width: 400px; /* keeps chatbot a decent width */
+  height: 630px; /* adapt height to content */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-left:-180px;
+  margin-top: 20px;
+}
+
+
+#chat-messages {
+  height: 400px;         /* fixed height */
+  overflow-y: auto;      /* vertical scroll only */
+  padding: 5px;
+  background: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+
+/* Car boxes */
+.box {
+  width: 250px;
+  height: 150px;
+  color: black;
+  display: flex;              /* enable flexbox */
+  flex-direction: column;     /* stack vertically */
+  justify-content: flex-end;  /* push content to bottom */
+  align-items: flex-start;    /* align content to left */
+  padding: 10px;              /* space inside box */
+  margin: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 8px;
+  box-sizing: border-box;     /* include padding in width/height */
+  line-height: normal;        /* reset from previous 150px */
+  text-align: left;
+}
+
+.description {
+  font-family: 'Horizon Font';
+}
+
+
+.send-button {
+  background-color: #01a6ff;
+  width: 90px;
+  height: 36px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  display: block;          /* Makes it a block element */
+  margin: 0 auto;          /* Centers horizontally */
+  margin-top: 10px;
+}
+
+.Disclaimer
+{
+  margin-top: 10px;
+}
+
+#message-input {
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 380px;        /* wider for comfort */
+  height: 60px;
+  padding: 8px;        /* add padding inside */
+  margin-top: 10px;
+  text-align: left;    /* more natural for typing */
+  resize: none;        /* prevent manual resizing */
+  box-sizing: border-box; /* include padding in width */
+}
+
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: black;
+  color: black;
+  position: relative;
+}
+
+.container
+{
+    cursor: pointer;
+}
+
+/* Logo fixed size, no flex grow */
+.logoBuy {
+  flex-shrink: 0;
+}
+
+/* Search wrapper: center the search bar */
+.search-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px; /* or max-width you want */
+}
+
+
+/* Search form same as before */
+form {
+  background: #fff;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Search input */
+form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Search button */
+form button {
+  background: #01a6ff;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  color: black;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  cursor: pointer;
+}
+
+/* Search icon */
+form i.fa-search {
+  color: #777;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.profile-wrap {
+  cursor: pointer;
+  color: #01a6ff;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Profile icon */
+#profile-icon {
+  font-size: 2rem;
+}
+
+/* Dropdown menu same as before */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: black;
+  padding: 10px;
+  z-index: 100;
+  border-radius: 5px;
+  min-width: 150px;
+}
+
+.profile-wrap:hover .dropdown-menu,
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 5px 0;
+}
+
+.dropdown-menu ul li a {
+  color: #01a6ff;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu ul li a:hover {
+  color: white;
+}
+
+.box:hover {
+    border: 5px solid #1a1a1a;
+}
+
+
+.description
+{
+  text-align: left;
+  margin-top: auto;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+
+ body {
+      background-color: #01a6ff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+   
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      width: 960px; /* 3 boxes × 300px + margins */
+    }
+
+    grid.box {
+      margin: 10px;
+    }
+
+.logo-link img {
+  width: 150px;
+  height: 50px;
+}
+
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.heart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.heart-container .solid-heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.heart-container:hover .regular-heart {
+  display: none;
+}
+
+.heart-container:hover .solid-heart {
+  display: inline;
+}
+
+
+#box1, #box2, #box3,
+#box4, #box5, #box6,
+#box7, #box8, #box9, #box10, #box11, #box12,
+#box13, #box14, #box15, #box16, #box17, #box18
+{
+  background-color: black;
+  border-radius: 5px;
+}
+
+#box1
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/39ba75f9b610a05237adc3ca976891cd48f5832c/photos/9AnEool5-zgANXuL/edit/IMFov.jpg?t=174534443183');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */
+}
+
+#box2
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/Kmm5W4me-9mbh-3yT7u-(edit).jpg?t=168751138085');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box3
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=768,quality=70/1477bbe21e8d6b5e719c7c3ccab577fd47dd8cc3/photos/9eXokxMo-DBrCWdHutd-(edit).jpg?t=170167101898');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+
+}
+
+#box4
+{
+background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/59339d5e07287c702e69307de910cceaa69c1d04/photos/3BvlwyE5-Bwm_XQu/edit/fevEu.jpg?t=174724721213');
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+}
+
+#box5
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/a76445f1c19fee0a3343d78af9706fd3fb29020b/photos/rEQ1k70d-JmGlKq4U00.jpg?t=174604430081');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box6
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/39ba75f9b610a05237adc3ca976891cd48f5832c/photos/exterior/3yQqR1pp-WY4FZWP/edit/q63H7.jpg?t=174921514857');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box7
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/8bbf0f64fbfad81f6867cff798d92495738b23a7/photos/30wXY5vj-XH6RwtAr0U/edit/BCAiw.jpg?t=174726475699');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box8
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/4822e9034b0b6b357b3f73fabdfc10e586c36f68/photos/exterior/rNGJjaZ5-Ut3jfMgmJr3/edit/Unnl1.jpg?t=173213051319');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box9
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/d32c8dde23a1411d0ef2e05bea168897e96c369b/photos/rwMkeLnM-2kKQcZoyEI-(edit).jpg?t=172203143091');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box10
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/438ad923cef6d8239e95d61e7d6849486bae11d9/photos/3gnxGZ19-AvO3Yzq81z-(edit).jpg?t=167770474154');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box11
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/438ad923cef6d8239e95d61e7d6849486bae11d9/photos/KmAD4aWx-7RjKc6OuWt-(edit).jpg?t=171140367890');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box12
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/438ad923cef6d8239e95d61e7d6849486bae11d9/photos/KYRR7mp5-rFI-zan(1)-TAJv1Po9sy.jpeg?t=174976281515');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box13
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/ee7f173e46ec801a48d1673c50f9cebaa1bf2854/photos/37470bvk-aa9swCKoRf/edit/MciJm.jpg?t=174239264245');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box14
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/4822e9034b0b6b357b3f73fabdfc10e586c36f68/photos/application/s-ovvfFub/edit/ufxil.jpg?t=174610346272');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box15
+{
+  background-image: url('https://smartcdn.gprod.postmedia.digital/driving/wp-content/uploads/2018/01/dscn2598.jpg?quality=90&strip=all&w=2400&h=1350&type=webp&sig=Yd0EZMoFa_1yxBjl_ijNwA');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */
+}
+
+#box16
+{
+  background-image: url('https://static0.carbuzzimages.com/wordpress/wp-content/uploads/gallery-images/original/877000/0/877065.jpg');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */
+}
+
+#box17
+{
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/rNa20LRW-WalfIjw62D-(edit).jpg?t=168876370348');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+#box18
+{
+  background-image:url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/da6e8a1d4896127a9d2adf83461993b45339474c/photos/r4ZPmZmD-V34MJD66o6G/edit/K7uNW.jpg?t=173764631898');
+  background-size: cover;        /* <-- Makes image cover the whole box */
+  background-position: center;   /* <-- Keeps it centered */
+  background-repeat: no-repeat;  /* <-- Prevents tiling */ 
+}
+
+
+.page-btn {
+  padding: 10px 18px;
+  margin: 0 5px;
+  background-color: #01a6ff;
+  color: black;
+  font-weight: bold;
+  border: 2px solid #01a6ff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+
+}
+
+.page-btn:hover {
+  background-color:black;
+  color:#01a6ff;
+}
+
+.page-btn.active {
+  background-color:black;
+  color: #01a6ff;
+}
+
+
+nav{
+  background: #1a1a1a;
+  width: 100%;
+  padding: 10px 10%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.profile-wrap {
+  position: relative;
+  cursor: pointer;
+}
+
+
+.special-box {
+  width: 200px;
+  height: 400px;
+  background-color: black;
+  text-align: center;
+  line-height: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: inline-block; /* <-- This is important */
+}
