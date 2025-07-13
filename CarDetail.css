@@ -1,0 +1,502 @@
+@font-face {
+  font-family: 'Horizon Font';
+  src: url(horizon.otf);
+}
+
+.info-and-other-cars {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.other-cars-container {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.info-wrapper {
+  flex: 1;
+}
+
+
+.normal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center everything by default */
+  background-color: black;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Profile on the left */
+.profile-wrap {
+  position: absolute;  /* position absolute relative to .normal-bar */
+  right: 60px;          
+  cursor: pointer;
+  color: #01a6ff;
+}
+
+/* Logo centered */
+.logo {
+  flex-shrink: 0;  /* prevent shrinking */
+}
+
+.logoDetail {
+  height: 40px; /* adjust as needed */
+}
+
+/* Dropdown menu styling (optional) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: black;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  min-width: 90px;
+  padding: 10px 0;
+}
+
+.profile-wrap:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li:hover {
+  background-color: #01a6ff;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* To prevent content from hiding under fixed header */
+body {
+  padding-top: 60px;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.img 
+{
+    width: 580px;
+    height: 400px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.page-title
+{
+    margin-left: 20px;
+    font-family: 'Inter', sans-serif;
+    
+}
+
+
+.price-tag{
+  background-color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+
+main
+{
+  display: flex;
+  align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+.icon,
+.anotherOne 
+{
+    width: 20px;
+    height: 15px;
+}
+
+.CarFax 
+{
+    font-size: 15px;
+    padding: 10px 10px;
+    margin: 5px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #01a6ff;
+    margin-left: 90px;
+}
+
+.CarFax:hover
+{
+  color:white;
+}
+
+.price-tag
+{
+  text-align: center;
+}
+
+.logoDetail
+{
+    width:150px;
+    height: 50px;
+}
+
+/* Container for all car boxes */
+.cool-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 40px;
+}
+
+
+/* Individual car box */
+.cool1 {
+  width: 200px;
+  height: 100px;
+  color: black;
+  display: flex;              /* use flex layout */
+  flex-direction: column;
+  justify-content: flex-end;  /* push text to bottom */
+  align-items: flex-start;    /* align to left */
+  padding: 10px;
+  margin: 6px;
+  cursor: pointer;
+  font-size: 8px;
+  box-sizing: border-box;
+  line-height: normal;
+  text-align: left;
+  font-family: 'Horizon Font';
+  transition: background-color 0.3s ease;
+
+
+  /* background image */
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/438ad923cef6d8239e95d61e7d6849486bae11d9/photos/3gnxGZ19-AvO3Yzq81z-(edit).jpg?t=167770474154');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.cool1:hover
+{
+    border: 5px solid #1a1a1a;
+}
+
+
+.cool2
+{
+  width: 200px;
+  height: 100px;
+  color: black;
+  display: flex;              /* use flex layout */
+  flex-direction: column;
+  justify-content: flex-end;  /* push text to bottom */
+  align-items: flex-start;    /* align to left */
+  padding: 10px;
+  margin: 6px;
+  cursor: pointer;
+  font-size: 8px;
+  box-sizing: border-box;
+  line-height: normal;
+  text-align: left;
+  font-family: 'Horizon Font';
+
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/438ad923cef6d8239e95d61e7d6849486bae11d9/photos/KmAD4aWx-7RjKc6OuWt-(edit).jpg?t=171140367890');  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.image-thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  border-color: #01a6ff;
+  color: #01a6ff;
+}
+
+
+.cool2:hover
+{
+    border: 5px solid #1a1a1a;
+}
+
+.cool3
+{
+  width: 200px;
+  height: 100px;
+  color: black;
+  display: flex;              /* use flex layout */
+  flex-direction: column;
+  justify-content: flex-end;  /* push text to bottom */
+  align-items: flex-start;    /* align to left */
+  padding: 10px;
+  margin: 6px;
+  cursor: pointer;
+  font-size: 8px;
+  box-sizing: border-box;
+  line-height: normal;
+  text-align: left;
+  font-family: 'Horizon Font';
+  
+  background-image: url('https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/438ad923cef6d8239e95d61e7d6849486bae11d9/photos/KYRR7mp5-rFI-zan(1)-TAJv1Po9sy.jpeg?t=174976281515');  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cool3:hover
+{
+    border: 5px solid #1a1a1a;
+}
+
+.text-highlight {
+  background-color: #01a6ff;
+  color: black;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 8px;
+}
+
+
+.details-list {
+  margin-left: 30px;
+    padding: 16px;       /* adds space inside the border */ 
+    border-radius: 8px;  /* <- missing semicolon fixed */
+    width: fit-content;
+    font-family: 'Inter', sans-serif;
+    width: 800px;
+    border: 2px solid black;
+
+}
+
+.info-wrapper
+{
+    border: 2px solid black;
+    padding: 16px;       /* adds space inside the border */ 
+    border-radius: 8px;  /* rounded corners */
+}
+
+.image-column {
+  position: relative; /* Key to anchor the heart inside */
+  display: inline-block;
+}
+
+
+.heart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.heart-container .solid-heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.heart-container:hover .regular-heart {
+  display: none;
+}
+
+.heart-container:hover .solid-heart {
+  display: inline;
+  cursor: pointer;
+}
+
+.image-container {
+  position: relative; /* Key to anchor the heart inside */
+  display: inline-block;
+}
+
+.img {
+  width: 580px;
+  height: 400px;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Keep this part as-is */
+.heart-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.solid-heart {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.heart-container:hover .regular-heart {
+  display: none;
+}
+
+.heart-container:hover .solid-heart {
+  display: inline;
+}
+
+.comment-section {
+  background: white;
+  margin: 40px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+.comment-section h2,
+.comment-section .head {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.comment-section .comment-count {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.comment-section .comments {
+  margin-bottom: 20px;
+}
+
+.comment-section .commentbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.comment-section .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.comment-section .content {
+  flex: 1;
+}
+
+.comment-section .user,
+.comment-section .usercomment {
+  width: 650px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.comment-section .commentinput input {
+  border-bottom: 2px solid #01a6ff;
+  background: transparent;
+}
+
+.comment-section .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-section .buttons button {
+  padding: 8px 16px;
+  background-color: #01a6ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.comment-section .buttons button:disabled {
+  background-color:black;
+  cursor: pointer;
+}
+.comment-section .buttons button:hover 
+{
+  color:#01a6ff;
+}
+
+
+
+.comment-section .notify {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+
+@media (max-width: 768px) {
+    .car-detail-container {
+        flex-direction: column;
+}
+
+.info-wrapper {
+  flex-direction: column;
+}
+
+.img {
+        width: 100%;
+        height: auto;
+    }
+}
+
